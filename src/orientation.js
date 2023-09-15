@@ -23,6 +23,10 @@ export default class Orientation {
     return false;
   };
 
+  static init = () => {};
+
+  static removeInit = () => {};
+
   static lockToPortrait = () => {};
 
   static lockToPortraitUpsideDown = () => {};

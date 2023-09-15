@@ -32,7 +32,13 @@ export default function App() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    //Initializing screen monitoring (Fixes android HuaWei，XiaoMi， privacy contract issues)
+    Orientation.init();
     checkLocked();
+    return () => {
+      //remove
+      Orientation.removeInit();
+    };
   });
 
   useOrientationChange((o) => {

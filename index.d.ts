@@ -32,14 +32,14 @@ export interface OrientationLockerProps {
   onDeviceChange?: (deviceOrientation: OrientationType) => void;
 }
 
-type IOSConfigurationOptions = {
-  disableFaceUpDown: boolean;
-}
-
 export const OrientationLocker: React.ComponentType<OrientationLockerProps>;
 
 declare class Orientation {
   static configure(options: IOSConfigurationOptions): void;
+
+  static init(): void;
+
+  static removeInit(): void;
 
   static addOrientationListener(callback: (orientation: OrientationType) => void): void;
 

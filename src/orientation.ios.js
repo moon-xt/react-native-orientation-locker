@@ -35,6 +35,10 @@ export default class Orientation {
     OrientationNative.configure(options);
   };
 
+  static init =()=> {}
+
+  static removeInit=()=> {}
+
   static getOrientation = cb => {
     OrientationNative.getOrientation(orientation => {
       cb(orientation);
